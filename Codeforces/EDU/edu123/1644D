@@ -1,0 +1,70 @@
+#include<bits/stdc++.h> //cgmoreda || Mohamed_Reda
+
+using namespace std;
+#define vin(v) for(auto &i:(v))cin>>i
+#define allr(v) v.rbegin(),v.rend()
+#define all(v) v.begin(),v.end()
+#define vvi vector<vector<int>>
+#define ii pair<int,int>
+#define vi vector<int>
+#define ll long long
+#define int long long
+const int mod = 998244353;
+long long binpow(long long x, long long k)
+{
+	long long ret = 1;
+	while (k)
+	{
+		if (k & 1) ret = (ret * x) % mod;
+		k >>= 1;
+		x = (x * x) % mod;
+	}
+	return ret;
+}
+const int N = 3e5;
+vector<int> r(N), c(N);
+int id = 0;
+void solve()
+{
+	id++;
+	int n, m, k, q;
+	cin >> n >> m >> k >> q;
+	vector<pair<int, int>> p(q);
+
+	for (auto& [x, y] : p)
+		cin >> x >> y;
+
+	reverse(all(p));
+
+	int cntr = 0, cntc = 0;
+	int qm = 0;
+
+	for (auto& [x, y] : p)
+	{
+		if (cntr == n || cntc == m)
+			break;
+		if (r[x] != id || c[y] != id)
+		{
+			qm++;
+			if (r[x] != id)
+				r[x] = id, cntr++;
+			if (c[y] != id)
+				c[y] = id, cntc++;
+		}
+	}
+	cout << binpow(k, qm) << '\n';
+}
+
+int32_t
+main()
+{
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+
+	int t = 1;
+	cin >> t;
+	while (t--)
+		solve();
+
+}
