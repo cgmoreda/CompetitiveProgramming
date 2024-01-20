@@ -14,10 +14,45 @@ pair<int, int> dr[] = {{ 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 }};
 
 void solve()
 {
+	bool kr, kb, kg;
+	kr = kb = kg = false;
 	string x;
 	cin >> x;
-	sort(all(x));
-	cout << x << endl;
+	for (auto i : x)
+	{
+		if (i == 'r')
+			kr = true;
+		else if (i == 'R')
+		{
+			if (!kr)
+			{
+				cout << "NO\n";
+				return;
+			}
+		}
+		if (i == 'b')
+			kb = true;
+		else if (i == 'B')
+		{
+			if (!kb)
+			{
+				cout << "NO\n";
+				return;
+			}
+		}
+		if (i == 'g')
+			kg = true;
+		else if (i == 'G')
+		{
+			if (!kg)
+			{
+				cout << "NO\n";
+				return;
+			}
+		}
+	}
+	cout << "YES\n";
+
 }
 
 int32_t
