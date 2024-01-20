@@ -1,0 +1,67 @@
+#include<bits/stdc++.h> //cgmoreda || Mohamed_Reda
+
+using namespace std;
+#define vin(v) for(auto &i:(v))cin>>i
+#define allr(v) v.rbegin(),v.rend()
+#define all(v) v.begin(),v.end()
+#define vvi vector<vector<int>>
+#define ii pair<int,int>
+#define vi vector<int>
+#define ll long long
+#define int long long
+
+int get(int x)
+{
+
+	if (x == 0)
+		return 1;
+	if (x & (x - 1))
+	{
+		int y = x;
+		while (x & (x - 1))
+			x &= x - 1;
+		return (x << 1) - y;
+	}
+	else return 0;
+}
+void solve()
+{
+	int n;
+	cin >> n;
+	vector<int> v(n);
+	vin(v);
+	map<int, int> mp;
+	for (auto i : v)mp[i]++;
+	sort(all(v));
+	int sol = 1e9;
+	for (int sz = 1; sz <= n; sz <<= 1)
+	{
+		for (int i = 0, j = 0; i < n && j < n;)
+		{
+			if (j - i > sz)
+			{
+				i += mp[v[i]];
+			}
+			else
+			{
+				sol = min(sol, sz - (j - i) + get(i) + get(n - j));
+				j += mp[v[j]];
+			}
+		}
+	}
+	cout << sol << endl;
+}
+
+int32_t
+main()
+{
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+
+	int t = 1;
+	cin >> t;
+	while (t--)
+		solve();
+
+}
