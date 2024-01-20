@@ -1,0 +1,56 @@
+#include<bits/stdc++.h> //cgmoreda || Mohamed_Reda
+
+using namespace std;
+#define vin(v) for(auto &i:(v))cin>>i
+#define allr(v) v.rbegin(),v.rend()
+#define all(v) v.begin(),v.end()
+#define vvi vector<vector<int>>
+#define ii pair<int,int>
+#define vi vector<int>
+#define ll long long
+#define int long long
+int n;
+int profile(string x, int inv)
+{
+	if (inv)
+		for (auto& i : x)
+			i = (i == 'D' ? 'R' : 'D');
+
+	int cntd = count(all(x), 'D');
+	int ld = n - 1, ret = 0;
+	for (auto i : x)
+	{
+		if (i == 'R')
+			ret += ld;
+		else
+		{
+			cntd--;
+			ld = cntd;
+		}
+	}
+
+	return ret;
+}
+void solve()
+{
+	string x;
+	cin >> n >> x;
+	if (count(all(x), x[0]) == x.size())
+		cout << n << endl;
+	else
+		cout << n * n - profile(x, 0) - profile(x, 1) << endl;
+}
+
+int32_t
+main()
+{
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+
+	int t = 1;
+	cin >> t;
+	while (t--)
+		solve();
+
+}
