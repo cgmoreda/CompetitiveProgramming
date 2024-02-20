@@ -1,6 +1,10 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        return (int)((nums.size()*(nums.size()+1)/2)-accumulate(nums.begin(),nums.end(),0LL));
+        int x=0;
+        for(int i=0;i<nums.size();i++)
+            x^=nums[i]^(i+1);
+        
+        return x;
     }
 };
