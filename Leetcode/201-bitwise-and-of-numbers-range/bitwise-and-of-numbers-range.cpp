@@ -1,7 +1,7 @@
 //Mohamed_Reda
 class Solution {
 public:
-    int rangeBitwiseAnd(int left, int right) {
+    int rangeBitwiseAnd(int& left, int& right) {
        
         unsigned int z = left^right;
         while(z&(z-1))
