@@ -8,12 +8,11 @@ public:
         cin.tie(NULL);
         cout.tie(NULL);
      
-        long long z = left^right;
+        unsigned int z = left^right;
         while(z&(z-1))
             z&=z-1;
         if(z){
-            z<<=1;
-            z-=1;
+            z<<=1,z-=1;
         }
         return (left&right)&(~z);
     
