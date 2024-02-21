@@ -1,4 +1,4 @@
-// Mohamed_Reda
+// cf Mohamed_Reda
 class Solution {
 public:
     int rangeBitwiseAnd(int left, int right) {
