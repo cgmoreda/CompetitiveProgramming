@@ -13,7 +13,13 @@ public:
                 break;
             else if(left&(1<<i))
                     g|=1<<i;
-                
-        return g;
+        long long z = left^right;
+        while(z&(z-1))
+            z&=z-1;
+            if(z){
+        z<<=1;
+        z-=1;}
+        return (left&right)&(~z);
+    
     }
 };
