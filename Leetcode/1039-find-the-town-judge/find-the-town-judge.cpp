@@ -3,6 +3,10 @@ class Solution
  public:
 	int findJudge(int n, vector<vector<int>>& trust)
 	{
+        ios_base::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
+
 		vector<int> countTrust(n + 1);
 		for (auto& v : trust)
 		{
