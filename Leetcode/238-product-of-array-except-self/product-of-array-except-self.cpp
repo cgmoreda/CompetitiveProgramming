@@ -1,6 +1,11 @@
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
+       
+        ios_base::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
+
         int n =nums.size();
         vector<int>pref(nums),suf(nums),ret(n,1);
         
