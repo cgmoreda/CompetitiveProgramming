@@ -3,10 +3,6 @@ public:
     bool canPlaceFlowers(vector<int>& f, int n) {
         int x = 0;
         
-        ios_base::sync_with_stdio(false);
-        cin.tie(nullptr);
-        cout.tie(nullptr);
-
         for(int i=0;i<f.size();i++)
         {
             if(f[i])
