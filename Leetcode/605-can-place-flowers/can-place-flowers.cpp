@@ -8,7 +8,6 @@ public:
                 i++;
             else if(i+1>=m||!f[i+1])
                 x++,i++;
-            
         }
         return x>=n;
     }
