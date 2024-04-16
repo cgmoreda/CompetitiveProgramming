@@ -1,6 +1,11 @@
 class Solution {
 public:
     string gcdOfStrings(string s1, string s2) {
+        
+        ios_base::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
+
         int n = s1.size();
         int m = s2.size();
         int gc = __gcd(n,m);
