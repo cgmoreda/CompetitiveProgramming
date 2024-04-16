@@ -1,18 +1,14 @@
 class Solution {
 public:
     vector<bool> kidsWithCandies(vector<int>& c, int ex) {
-        multiset<int>ms;
-        
-        for(auto &i:c)
-            ms.insert(i);
-        
+
+
+        int mx = *max_element(c.begin(),c.end());
+            
         vector<bool>ret;
         for(auto &i:c)
-        {
-            ms.erase(ms.find(i));
-            ret.push_back(*ms.rbegin()<=i+ex);
-            ms.insert(i);
-        }
+            ret.push_back(i==mx?true:mx<=i+ex);
+        
         return ret;
     }
 };
