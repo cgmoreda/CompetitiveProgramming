@@ -5,8 +5,6 @@
        return 11;
 }();
 
-
-
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
