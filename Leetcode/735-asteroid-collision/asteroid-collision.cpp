@@ -21,7 +21,8 @@ public:
                 } else if (st.back() == -i) {
                     st.pop_back();
                 }
-            } else {
+            } 
+            else {
                 st.push_back(i);
             }
         }
