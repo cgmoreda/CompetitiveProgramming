@@ -9,6 +9,14 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+ const auto init = [](){
+       std::cin.tie(nullptr);
+       std::cout.tie(nullptr);
+       std::ios_base::sync_with_stdio(false);
+       return 11;
+}();
+
+
 class Solution {
 public:
     map<long long,int> mp;
