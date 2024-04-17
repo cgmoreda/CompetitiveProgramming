@@ -24,8 +24,10 @@ public:
         if(root==nullptr)
             return;
         if(root->left==nullptr&&root->right==nullptr)
+        {
             t[id].push_back(root->val);
-        
+            return;
+        }
         dfs(root->left,id);
         dfs(root->right,id);
     }
