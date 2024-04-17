@@ -9,7 +9,7 @@ const auto init = [](){
 class Solution {
 public:
     vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) {
-        map<int,int>mp1,mp2;
+        unordered_map<int,int>mp1,mp2;
         for(auto i:nums2)
             mp2[i]++;
         for(auto i:nums1)
