@@ -1,6 +1,11 @@
 class Solution {
 public:
     bool increasingTriplet(vector<int>& nums) {
+        
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cout.tie(nullptr);
+
         int mn1=2147483647,mn2=2147483647;
 
         for(auto &i:nums)
