@@ -17,7 +17,7 @@ public:
             return 0;
 
         int mx =0;
-        dfs(root,2,mx);
+        
         dfs(root,1,mx);
         return mx;
     }
