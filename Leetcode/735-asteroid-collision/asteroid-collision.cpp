@@ -1,4 +1,5 @@
 #define all(v) v.begin(), v.end()
+
 const auto init = [](){
        std::cin.tie(nullptr);
        std::cout.tie(nullptr);
