@@ -19,7 +19,7 @@
 
 class Solution {
 public:
-    map<long long,int> mp;
+    unordered_map<long long,int> mp;
     int pathSum(TreeNode* root, int targetSum,long long csum=0,int firs=1) {
         if(root==nullptr)
             return 0;
