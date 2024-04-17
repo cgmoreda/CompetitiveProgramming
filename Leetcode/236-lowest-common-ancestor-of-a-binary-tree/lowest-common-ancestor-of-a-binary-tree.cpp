@@ -10,19 +10,19 @@
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        TreeNode* ans=nullptr;
-        dfs(root,p,q,ans);
+        TreeNode* ans = nullptr;
+        dfs(root, p, q, ans);
         return ans;
     }
 
-    int dfs(TreeNode* node,TreeNode* &p, TreeNode* &q,TreeNode* &ans){
-        if(node==nullptr)
+    int dfs(TreeNode* node, TreeNode*& p, TreeNode*& q, TreeNode*& ans) {
+        if (node == nullptr)
             return 0;
-        TreeNode* tmp = ans; 
-        
-        int ret = (node==p)|(node==q)<<1;
-        ret|=dfs(node->right,p,q,ans)|dfs(node->left,p,q,ans);
-        if(ret==3&&tmp==ans)
+        TreeNode* tmp = ans;
+
+        int ret = (node == p) | (node == q) << 1;
+        ret |= dfs(node->right, p, q, ans) | dfs(node->left, p, q, ans);
+        if (ret == 3 && tmp == ans)
             ans = node;
         return ret;
     }
