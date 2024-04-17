@@ -8,8 +8,7 @@ class Solution {
 public:
     int longestSubarray(vector<int>& nums) {
         int k=1;
-        if(count(nums.begin(),nums.end(),1)==0)
-            return 0;
+      
         int n = nums.size(),nzeros=0;
         vector<int>&v =nums;
         int ans=0;
