@@ -1,3 +1,11 @@
+const auto init = [](){
+       std::cin.tie(nullptr);
+       std::cout.tie(nullptr);
+       std::ios_base::sync_with_stdio(false);
+       return 11;
+}();
+
+
 class RecentCounter {
     queue<int>q;
 public:
