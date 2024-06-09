@@ -6,7 +6,7 @@ public:
         mp[0] = 1;
         int ans = 0, sum = 0;
         for (int i = 0; i < n; i++) 
-            ans += mp[sum = ((sum + nums[i]) % k+k)%k]++;
+            ans += mp[sum = (sum + nums[i]+(int)(k*1e4)) % k]++;
         return ans;
     }
 };
