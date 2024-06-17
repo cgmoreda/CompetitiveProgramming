@@ -4,10 +4,11 @@ public:
         
         for(long long i=0,j=1e5;i<=j;)
         {
-            if(i*i+j*j<c)
+            long long tmp = i*i+j*j;
+            if(tmp<c)
                 i++;
-             else if(i*i+j*j>c)
-                 j--;
+             else if(tmp>c)
+                j--;
              else 
                 return true;
         }
