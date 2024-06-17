@@ -1,19 +1,15 @@
 class Solution {
 public:
     bool judgeSquareSum(int c) {
-        vector<long long>sqrs;
-        for(long long i=0;i*i<=1e10;i++)
-        {
-            sqrs.push_back(i*i);
-        }
         
-        for(auto i:sqrs)
+        for(long long i=0,j=1e5;i<=j;)
         {
-            if(c<i)
-                break;
-            if(binary_search(sqrs.begin(),sqrs.end(),c-i))
+            if(i*i+j*j<c)
+                i++;
+             else if(i*i+j*j>c)
+                 j--;
+             else 
                 return true;
-            
         }
         return false;
     }
