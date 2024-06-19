@@ -21,7 +21,7 @@ public:
             }
             return c2>=m;
         };
-        int l=0,r=1e9+1,mid,ans=1e9;
+        int l=0,r=1e9+1,mid,ans=*max_element(bloomDay.begin(),bloomDay.end());
         while(l<=r)
         {
             mid =(l+r)/2;
