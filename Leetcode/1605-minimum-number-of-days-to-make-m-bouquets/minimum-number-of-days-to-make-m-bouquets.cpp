@@ -9,6 +9,8 @@ public:
             int c1=0,c2=0;
             for(int i=0;i<n;i++)
             {
+                 if(1ll*(m-c2)*k>(n-i+1+c1))
+                    return false;
                 if(bloomDay[i]<=days)
                 {
                     c1++;
