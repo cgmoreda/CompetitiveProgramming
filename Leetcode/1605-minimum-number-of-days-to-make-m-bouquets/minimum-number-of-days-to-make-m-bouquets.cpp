@@ -2,6 +2,8 @@ class Solution {
 public:
     int minDays(vector<int>& bloomDay, int m, int k) {
         int n = bloomDay.size();
+        vector<int>tmp(bloomDay);
+        sort(tmp.begin(),tmp.end());
         if(1ll*m*k>n)
             return -1;
         auto can=[&](int days)
@@ -21,7 +23,7 @@ public:
             }
             return c2>=m;
         };
-        int l=0,r=1e9+1,mid;
+        int l=tmp[k*m-1],r=1e9+1,mid;
         int ans=*max_element(bloomDay.begin(),bloomDay.end());
         r = ans;
         while(l<=r)
