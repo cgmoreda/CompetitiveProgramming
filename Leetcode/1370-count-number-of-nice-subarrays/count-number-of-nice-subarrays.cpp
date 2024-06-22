@@ -1,6 +1,9 @@
 class Solution {
 public:
     int numberOfSubarrays(vector<int>& nums, int k) {
+        
+        ios_base::sync_with_stdio(false);
+        cin.tie(nullptr);
         int n = nums.size();
         vector<int>b(n+2),o;
         int c=0;
@@ -9,12 +12,7 @@ public:
         {
             c++;
             if(nums[i]&1)
-            {
-                o.push_back(i);
-                b[i]=c;
-                c=0;
-            }
-            
+                o.push_back(i),b[i]=c,c=0;
         }
         o.push_back(n);
         b[n] = c+1;
