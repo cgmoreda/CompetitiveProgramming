@@ -2,7 +2,7 @@ class Solution {
 public:
     int numberOfSubarrays(vector<int>& nums, int k) {
         int n = nums.size();
-        vector<int>a(n+2),b(n+2),o;
+        vector<int>b(n+2),o;
         int c=0;
 
         for(int i=0;i<n;i++)
@@ -16,19 +16,11 @@ public:
             }
             
         }
-        c=0;
-        for(int i=n-1;i>=0;i--)
-        {
-            c++;
-            if(nums[i]&1)
-            {
-                a[i]=c;
-                c=0;
-            }
-        }
+        o.push_back(n);
+        b[n] = c+1;
         int ans=0;
-        for(int i=0;i+k-1<o.size();i++)
-            ans+=b[o[i]]*a[o[i+k-1]];
+        for(int i=0;i+k<o.size();i++)
+            ans+=b[o[i]]*b[o[i+k]];
  
         return ans;
     }
